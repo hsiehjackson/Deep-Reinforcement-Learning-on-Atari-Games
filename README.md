@@ -54,22 +54,23 @@ We use three Atari Games to test our performance separately, such as [LunarLande
 
 | LunarLander  | Assault | Mario |
 | :--------: | :--------: | :--------: |
-|![](image/Lunarlander.gif | height=200) |![](image/Assault.gif | height=200) |![](image/Mario.gif | height=200)| 
+|<img src="image/Lunarlander.gif"  height="200" /> |<img src="image/Assault.gif"  height="200" /> |<img src="image/Mario.gif"  height="200" /> |
 
 ## Techniques for Deep Reinforcement Learning
-### Policy Gradient
+> ### Policy Gradient
 We implement policy gradient agents with REIFORCE algorithm. However, I also use some improvements including reward normalization and proximal policy optimization (PPO).
 * Reward Normalization
 
 Due to all positive rewards, we can subtract a baseline (normalized) to let **rewards have negative value**. With baseline, the probability of the not sampled actions will not decrease sharply
 
 * Proximal policy optimization
+
 PPO had implemented off-policy algorithm with **important sampling**, which set KL divergence constraints for that θ cannot very different from θ'. The objective function is shown below.
 
 <img src="https://i.imgur.com/EnWmRf7.png"/>
 
-### Deep Q-Learning (DQN)
-Besides classic DQN algorithm, we also implement some simple improvements for DQN, such as Double DQN and Dueling DQN.
+> ### Deep Q-Learning (DQN)
+Besides classic DQN algorithm, we also implement some improvements for DQN, such as Double DQN and Dueling DQN.
 * Double DQN
 
 It is used to **solve over-estimated problems**. With two networks (online and target), they can compensate for the other to avoid over-estimated q value. This method is only need another copied network to acquire target actions.
@@ -81,7 +82,7 @@ Dueling DQN is used to acquire the state q value among each actions and **set a 
 | :--------: | :--------: |
 | <img src="https://i.imgur.com/bkSeAOk.png"  height="120" /> | <img src="https://i.imgur.com/l0PGdm8.png"  height="120" />|
 
-### Advantage-Actor-Critic (A2C) 
+> ### Advantage-Actor-Critic (A2C) 
 
 Different from general a2c framework, we also implement proximal policy optimization (PPO) and **Generalized Advantage Estimation (GAE)** on multi-processing environment with value loss, action loss, and entropy loss. This method can consider the KL-divergence constraints and train more iteration on one steps. Our framework was reference from [here](https://github.com/higgsfield/RL-Adventure-2/blob/master/3.ppo.ipynb).
 
@@ -112,4 +113,4 @@ As for the results of A2C, we can find that the performance **with PPO is higher
 | :--------: | :--------: | :--------: | :--------: |
 |Games| LunarLander | Assault | Mario |
 |Test Episodes|30|100|10|
-|Reward|90.11|275.95|3243.30|
+|Average Rewards|90.11|275.95|3243.30|
