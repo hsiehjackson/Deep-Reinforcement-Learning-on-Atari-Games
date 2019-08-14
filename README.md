@@ -54,7 +54,7 @@ We use three Atari Games to test our performance separately, such as [LunarLande
 
 | LunarLander  | Assault | Mario |
 | :--------: | :--------: | :--------: |
-|![](image/Lunarland.gif) |![](image/Assault.gif) |![](image/Mario.gif)| 
+|![](image/Lunarlander.gif) |![](image/Assault.gif) |![](image/Mario.gif)| 
 ---
 ## Techniques for Deep Reinforcement Learning
 ### Policy Gradient
